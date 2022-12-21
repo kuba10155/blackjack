@@ -16,6 +16,7 @@ playerEl.textContent = player.name + ": $" + player.chips
 
 
 function startGame() {
+  clear()
   isAlive = true
   let firstCard = getRandomCard()
   let secondCard = getRandomCard()
@@ -61,4 +62,9 @@ function newCard() {
     cards.push(card)
     renderGame()
   }
+}
+
+function clear() {
+  cards = []
+  sum = 0
 }
