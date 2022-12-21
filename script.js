@@ -44,6 +44,7 @@ function getRandomCard() {
 }
 
 function renderGame() {
+  startBtn.disabled = true
   cardsEl.textContent = "Cards: "
   for (let i = 0; i < cards.length; i++) {
      cardsEl.textContent += cards[i] + " "
@@ -55,10 +56,12 @@ function renderGame() {
     message = "You've got Blackjack!"
     hasBlackJack = true
     player.chips += 50
+    startBtn.disabled = false
   } else {
     message = "You're out of the game!"
     isAlive = false
     player.chips -= 10
+    startBtn.disabled = false
   }
   messageEl.textContent = message;
 }
